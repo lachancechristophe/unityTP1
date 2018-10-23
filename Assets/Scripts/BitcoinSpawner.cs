@@ -29,7 +29,7 @@ public class BitcoinSpawner : MonoBehaviour {
         }
     }
 
-    private void KillAllBtc() { foreach (GameObject go in lstBtcSpawned) Destroy(go); lstBtcSpawned.Clear(); }
+    public void KillAllBtc() { foreach (GameObject go in lstBtcSpawned) Destroy(go); lstBtcSpawned.Clear(); }
 
     public void LowerAdCount() { curBtc--; }
     public void ResetAdCount() { curBtc = 0; }

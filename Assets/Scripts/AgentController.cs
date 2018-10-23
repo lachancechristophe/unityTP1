@@ -85,7 +85,7 @@ public class AgentController : MonoBehaviour {
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, rayonGround, whatIsGround);
         icePhysics = Physics2D.OverlapCircle(groundCheck.position, rayonGround, whatIsIce);
-        Debug.Log(icePhysics.ToString());
+
         anim.SetFloat("Speed", Mathf.Abs(move));
         anim.SetBool("isGrounded", isGrounded);
     }

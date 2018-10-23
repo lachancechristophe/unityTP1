@@ -50,7 +50,7 @@ public class AdSpawner : MonoBehaviour {
         if (lstAdsSpawned.Count > 0 && adBlockActive) KillAllAds();
     }
 
-    private void KillAllAds() { foreach (GameObject go in lstAdsSpawned) Destroy(go); lstAdsSpawned.Clear();  }
+    public void KillAllAds() { foreach (GameObject go in lstAdsSpawned) Destroy(go); lstAdsSpawned.Clear();  }
     public void ActivateAdBlock() { adBlockActive = true; }
     public void DisableAdBlock() { adBlockActive = false; }
 

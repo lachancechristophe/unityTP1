@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class ViesController : MonoBehaviour {
-    private static int vies = 5;
+    private static int vies = 3;
     private Text texto;
 
     public GameObject endpanel;
@@ -20,10 +20,11 @@ public class ViesController : MonoBehaviour {
         texto.text = "Vies: " + vies.ToString();
     }
 
-    private void Mourir()
+    private void GameOver()
     {
-        ResetVies();
         endpanel.GetComponent<RestartCtrl>().ShowPanel(false);
+        ResetVies();
+
     }
 
     public void PerdreVie()
@@ -31,9 +32,9 @@ public class ViesController : MonoBehaviour {
         if (vies >= 1)
         {
             vies--;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+            SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
-        else Mourir();
+        else GameOver();
         
     }
 

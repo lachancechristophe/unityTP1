@@ -33,7 +33,7 @@ public class EnnemiController: MonoBehaviour {
         Destroy(this.gameObject);
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionExit2D(Collision2D collision)
     {
         pointageText.GetComponent<PointageController>().ResetScore();
 

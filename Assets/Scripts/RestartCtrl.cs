@@ -9,6 +9,9 @@ public class RestartCtrl : MonoBehaviour {
     // Use this for initialization
 
     public Text winText, loseText, pointage, vies;
+    public AdSpawner ass;
+    public BitcoinSpawner bss;
+
 
     public void RestartGame()
     {
@@ -21,8 +24,22 @@ public class RestartCtrl : MonoBehaviour {
     {
         this.gameObject.SetActive(true);
         if (win)
-            winText.enabled = true;
+        {
+            winText.gameObject.SetActive(true);
+            loseText.gameObject.SetActive(false);
+        }
         else
-            loseText.enabled = true;
+        {
+            loseText.gameObject.SetActive(true);
+            winText.gameObject.SetActive(false);
+        }
+        if (ass != null) {
+            ass.KillAllAds();
+            Destroy(ass);
+        }
+        if (bss != null) {
+            bss.KillAllBtc();
+            Destroy(bss);
+        }
     }
 }
